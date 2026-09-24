@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NilKishorIT — Admin & Content Management Console</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body class="admin-body">
+
+    <!-- Admin Top Header -->
+    <header class="admin-header">
+        <div class="container admin-nav-container">
+            <div class="admin-title-badge">
+                <a href="index.html" class="brand-logo" style="font-size: 1.35rem;">
+                    <div class="logo-symbol" style="width:36px; height:36px;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="4 20 4 4 20 20 20 4"></polyline>
+                        </svg>
+                    </div>
+                    <span>NilKishorIT</span>
+                </a>
+                <span class="admin-badge">Admin Dashboard</span>
+            </div>
+
+            <div class="admin-top-actions">
+                <a href="index.html" target="_blank" class="btn btn-secondary"
+                    style="padding: 8px 16px; font-size: 0.85rem;">
+                    🌐 View Live Website
+                </a>
+                <button class="btn btn-primary" id="adminLogoutBtn" style="padding: 8px 16px; font-size: 0.85rem;">
+                    Logout
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Admin Main Layout -->
+    <div class="admin-layout">
+        <!-- Sidebar Navigation -->
+        <aside class="admin-sidebar">
+            <div class="admin-nav-item active" data-tab="dashboard">
+                <span>📊 Dashboard Overview</span>
+            </div>
+            <div class="admin-nav-item" data-tab="heroslides">
+                <span>🖼️ Hero Banner Slides</span>
+                <span class="nav-count" id="kpiHeroSlidesCount">4</span>
+            </div>
+            <div class="admin-nav-item" data-tab="hero">
+                <span>📑 Service Feature Cards</span>
+                <span class="nav-count" id="kpiHeroCount">4</span>
+            </div>
+            <div class="admin-nav-item" data-tab="projects">
+                <span>📁 Case Study Projects</span>
+                <span class="nav-count" id="kpiProjectsCount">4</span>
+            </div>
+            <div class="admin-nav-item" data-tab="team">
+                <span>👥 Team Members</span>
+                <span class="nav-count" id="kpiTeamCount">4</span>
+            </div>
+            <div class="admin-nav-item" data-tab="siteinfo">
+                <span>✏️ Site & General Content</span>
+            </div>
+            <div class="admin-nav-item" data-tab="inquiries">
+                <span>📩 Client Messages</span>
+                <span class="nav-count" id="kpiInquiriesCount">0</span>
+            </div>
+            <div class="admin-nav-item" data-tab="settings" style="margin-top: auto;">
+                <span>⚙️ Backup & Reset</span>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="admin-main">
+
+            <!-- TAB 1: DASHBOARD OVERVIEW -->
+            <section class="admin-tab-pane active" id="tab-dashboard">
+                <div class="admin-pane-header">
+                    <h1 class="admin-pane-title">Welcome to NilKishorIT Control Hub</h1>
+                </div>
+
+                <div class="kpi-grid" style="grid-template-columns: repeat(5, 1fr);">
+                    <div class="kpi-card">
+                        <div class="kpi-label">Banner Slides</div>
+                        <div class="kpi-value" id="kpiHeroSlidesCountCard">4</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-label">Service Cards</div>
+                        <div class="kpi-value" id="kpiHeroCountCard">4</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-label">Case Studies</div>
+                        <div class="kpi-value" id="kpiProjectsCountCard">4</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-label">Team Members</div>
+                        <div class="kpi-value" id="kpiTeamCountCard">4</div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-label">Inquiries</div>
+                        <div class="kpi-value" id="kpiInquiriesCountCard">0</div>
+                    </div>
+                </div>
+
+                <div class="admin-card">
+                    <h2 class="admin-card-title">Quick Actions</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 20px;">Easily modify your website content, add
+                        projects, and control what clients see in real-time.</p>
+                    <div style="display:flex; gap: 14px; flex-wrap: wrap;">
+                        <button class="btn btn-primary"
+                            onclick="document.querySelector('[data-tab=hero]').click();">Manage Hero Slider</button>
+                        <button class="btn btn-secondary"
+                            onclick="document.querySelector('[data-tab=projects]').click();">Manage Projects</button>
+                        <button class="btn btn-secondary"
+                            onclick="document.querySelector('[data-tab=siteinfo]').click();">Edit Site Headings</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAB 2: HERO BANNER SLIDES (Auto-changing background & headlines) -->
+            <section class="admin-tab-pane" id="tab-heroslides">
+                <div class="admin-pane-header">
+                    <div>
+                        <h1 class="admin-pane-title">Hero Banner Auto-Slider Management</h1>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">Add, edit or delete the hero slides that
+                            auto-transition every 5 seconds with background images and headlines.</p>
+                    </div>
+                    <button class="btn btn-primary" id="btnNewHeroSlide">+ Add New Hero Slide</button>
+                </div>
+
+                <div class="admin-card">
+                    <div class="admin-table-wrapper">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Background</th>
+                                    <th>Category</th>
+                                    <th>Slide Title</th>
+                                    <th>Primary CTA</th>
+                                    <th>Secondary CTA</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="heroSlidesTableBody">
+                                <!-- Populated dynamically via renderHeroSlidesTable() -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAB 3: 4 SERVICE FEATURE CARDS -->
+            <section class="admin-tab-pane" id="tab-hero">
+                <div class="admin-pane-header">
+                    <div>
+                        <h1 class="admin-pane-title">Hero 4-Service Feature Cards</h1>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">Manage the 4 service highlight cards
+                            displayed beneath the orchestrate section.</p>
+                    </div>
+                    <button class="btn btn-primary" id="btnNewHeroCard">+ Add New Service Card</button>
+                </div>
+
+                <div class="admin-card">
+                    <div class="admin-table-wrapper">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Card Title</th>
+                                    <th>Badge</th>
+                                    <th>Highlight Metric</th>
+                                    <th>Tech Stack</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="heroCardsTableBody">
+                                <!-- Populated dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAB 3: CASE STUDY PROJECTS -->
+            <section class="admin-tab-pane" id="tab-projects">
+                <div class="admin-pane-header">
+                    <div>
+                        <h1 class="admin-pane-title">Portfolio Projects & Case Studies</h1>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">Manage e-commerce style case studies
+                            with screenshots, challenge, and solutions.</p>
+                    </div>
+                    <button class="btn btn-primary" id="btnNewProject">+ Add New Project</button>
+                </div>
+
+                <div class="admin-card">
+                    <div class="admin-table-wrapper">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Project</th>
+                                    <th>Category</th>
+                                    <th>Client</th>
+                                    <th>Timeline</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="projectsTableBody">
+                                <!-- Populated dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAB 4: SITE CONTENT & HERO HEADINGS -->
+            <section class="admin-tab-pane" id="tab-siteinfo">
+                <div class="admin-pane-header">
+                    <h1 class="admin-pane-title">Customize Site Information & Counters</h1>
+                </div>
+
+                <div class="admin-card">
+                    <form id="siteInfoForm" style="display:flex; flex-direction:column; gap:20px;">
+                        <div class="form-group-row">
+                            <div class="form-field">
+                                <label for="infoBrandName">Company Brand Name</label>
+                                <input type="text" id="infoBrandName" required>
+                            </div>
+                            <div class="form-field">
+                                <label for="infoBrandTagline">Brand Tagline</label>
+                                <input type="text" id="infoBrandTagline">
+                            </div>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="infoHeroBadge">Hero Badge Pill Text</label>
+                            <input type="text" id="infoHeroBadge" required>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="infoHeroSubtitle">Hero Subtitle Paragraph</label>
+                            <textarea id="infoHeroSubtitle" rows="3" required></textarea>
+                        </div>
+
+                        <div class="form-group-row">
+                            <div class="form-field">
+                                <label for="infoPhone">Contact Phone Number</label>
+                                <input type="text" id="infoPhone">
+                            </div>
+                            <div class="form-field">
+                                <label for="infoEmail">Contact Email Address</label>
+                                <input type="email" id="infoEmail">
+                            </div>
+                        </div>
+
+                        <h3
+                            style="margin-top: 15px; font-size: 1.1rem; border-top: 1px solid var(--border-light); padding-top: 15px;">
+                            Live Counter Statistics (About Section)
+                        </h3>
+
+                        <div class="form-group-row" style="grid-template-columns: repeat(4, 1fr);">
+                            <div class="form-field">
+                                <label for="infoExpYears">Years Exp.</label>
+                                <input type="text" id="infoExpYears">
+                            </div>
+                            <div class="form-field">
+                                <label for="infoCompletedProj">Projects</label>
+                                <input type="text" id="infoCompletedProj">
+                            </div>
+                            <div class="form-field">
+                                <label for="infoTeamExperts">Engineers</label>
+                                <input type="text" id="infoTeamExperts">
+                            </div>
+                            <div class="form-field">
+                                <label for="infoHappyClients">Happy Clients</label>
+                                <input type="text" id="infoHappyClients">
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="align-self: flex-start; margin-top: 10px;">
+                            💾 Save Site Changes
+                        </button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- TAB 5: INBOX INQUIRIES -->
+            <section class="admin-tab-pane" id="tab-inquiries">
+                <div class="admin-pane-header">
+                    <h1 class="admin-pane-title">Client Project Inquiries</h1>
+                </div>
+
+                <div class="admin-card">
+                    <div class="admin-table-wrapper">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Client Name & Date</th>
+                                    <th>Contact Info</th>
+                                    <th>Service & Budget</th>
+                                    <th>Message</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="inquiriesTableBody">
+                                <!-- Populated dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAB 6: TEAM MANAGEMENT -->
+            <section class="admin-tab-pane" id="tab-team">
+                <div class="admin-pane-header">
+                    <div>
+                        <h1 class="admin-pane-title">Leadership & Engineering Team</h1>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">Add, edit or remove company team
+                            profiles displayed on the homepage.</p>
+                    </div>
+                    <button class="btn btn-primary" id="btnNewTeamMember">+ Add Team Member</button>
+                </div>
+
+                <div class="admin-card">
+                    <div class="admin-table-wrapper">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Member</th>
+                                    <th>Designation / Role</th>
+                                    <th>Bio / Expertise</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="teamTableBody">
+                                <!-- Populated dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAB 7: BACKUP & SYSTEM RESET -->
+            <section class="admin-tab-pane" id="tab-settings">
+                <div class="admin-pane-header">
+                    <h1 class="admin-pane-title">Data Backup & Storage Reset</h1>
+                </div>
+
+                <div class="admin-card">
+                    <h2 class="admin-card-title">📦 Data Export / Backup</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 20px;">
+                        Download a complete JSON snapshot of all your hero cards, case studies, team profiles, and
+                        settings.
+                    </p>
+                    <button class="btn btn-secondary" id="adminExportJsonBtn" style="padding: 12px 24px;">
+                        📥 Download Backup JSON
+                    </button>
+                </div>
+
+                <div class="admin-card">
+                    <h2 class="admin-card-title" style="color: #DC2626;">Danger Zone</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 20px;">
+                        Reset all customized hero cards, projects, and site settings back to default starting
+                        configurations.
+                    </p>
+                    <button class="btn btn-delete" id="adminResetAllBtn" style="padding: 12px 24px;">
+                        ⚠️ Reset All Data to Factory Default
+                    </button>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!--  MODAL 0: ADD / EDIT HERO BANNER SLIDE -->
+    <div class="admin-modal-overlay" id="heroSlideModal">
+        <div class="admin-modal-box">
+            <div class="modal-header">
+                <h3 id="heroSlideModalTitle">Add Hero Banner Slide</h3>
+                <button class="modal-close-btn">&times;</button>
+            </div>
+            <form id="heroSlideForm" style="display:flex; flex-direction:column; gap:16px;">
+                <input type="hidden" id="heroSlideId">
+                <div class="form-group-row">
+                    <div class="form-field">
+                        <label for="heroSlideCategory">Category / Breadcrumb *</label>
+                        <input type="text" id="heroSlideCategory"
+                            placeholder="e.g. Consulting, Artificial Intelligence, Hybrid Cloud" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="heroSlideBgImage">Background Image URL *</label>
+                        <input type="url" id="heroSlideBgImage" placeholder="https://images.unsplash.com/..." required>
+                    </div>
+                </div>
+                <div class="form-field">
+                    <label for="heroSlideTitle">Slide Headline / Title *</label>
+                    <input type="text" id="heroSlideTitle"
+                        placeholder="e.g. Engineering Scalable Digital Solutions for Forward-Thinking Businesses"
+                        required>
+                </div>
+                <div class="form-field">
+                    <label for="heroSlideSubtitle">Subtitle / Description *</label>
+                    <textarea id="heroSlideSubtitle" rows="3" placeholder="Explain the value proposition clearly..."
+                        required></textarea>
+                </div>
+                <div class="form-group-row">
+                    <div class="form-field">
+                        <label for="heroSlidePrimaryBtnText">Primary Button Text</label>
+                        <input type="text" id="heroSlidePrimaryBtnText" placeholder="e.g. Start a Project">
+                    </div>
+                    <div class="form-field">
+                        <label for="heroSlidePrimaryBtnUrl">Primary Button Target URL</label>
+                        <input type="text" id="heroSlidePrimaryBtnUrl" placeholder="e.g. #contact">
+                    </div>
+                </div>
+                <div class="form-group-row">
+                    <div class="form-field">
+                        <label for="heroSlideSecondaryBtnText">Secondary Button Text</label>
+                        <input type="text" id="heroSlideSecondaryBtnText" placeholder="e.g. Explore the work">
+                    </div>
+                    <div class="form-field">
+                        <label for="heroSlideSecondaryBtnUrl">Secondary Button Target URL</label>
+                        <input type="text" id="heroSlideSecondaryBtnUrl" placeholder="e.g. #projects">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Save Banner Slide</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL 1: ADD / EDIT HERO SERVICE CARD-->
+    <div class="admin-modal-overlay" id="heroCardModal">
+        <div class="admin-modal-box">
+            <div class="modal-header">
+                <h3 id="heroCardModalTitle">Add Hero Carousel Card</h3>
+                <button class="modal-close-btn">&times;</button>
+            </div>
+            <form id="heroCardForm" style="display:flex; flex-direction:column; gap:16px;">
+                <input type="hidden" id="heroCardId">
+                <div class="form-field">
+                    <label for="heroCardTitle">Card Title *</label>
+                    <input type="text" id="heroCardTitle" placeholder="e.g. Cloud-Native Enterprise ERP" required>
+                </div>
+                <div class="form-group-row">
+                    <div class="form-field">
+                        <label for="heroCardBadge">Badge Text *</label>
+                        <input type="text" id="heroCardBadge" placeholder="e.g. Featured Service" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="heroCardStats">Highlight Metric / Stat</label>
+                        <input type="text" id="heroCardStats" placeholder="e.g. 3.5x Faster Workflows">
+                    </div>
+                </div>
+                <div class="form-field">
+                    <label for="heroCardDesc">Short Description *</label>
+                    <textarea id="heroCardDesc" rows="2" placeholder="Brief summary of this highlight..."
+                        required></textarea>
+                </div>
+                <div class="form-group-row">
+                    <div class="form-field">
+                        <label for="heroCardTags">Tech Stack Tags (Comma separated)</label>
+                        <input type="text" id="heroCardTags" placeholder="e.g. Microservices, PostgreSQL, Cloud">
+                    </div>
+                    <div class="form-field">
+                        <label for="heroCardIcon">Icon Type</label>
+                        <select id="heroCardIcon">
+                            <option value="server">Server (Database/ERP)</option>
+                            <option value="cpu">CPU (AI & Automation)</option>
+                            <option value="shopping-bag">Shopping Bag (E-Commerce)</option>
+                            <option value="smartphone">Smartphone (Mobile App)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-field">
+                    <label for="heroCardLinkUrl">Button Target URL</label>
+                    <input type="text" id="heroCardLinkUrl" placeholder="project-detail.html?id=proj-1">
+                </div>
+                <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Save Hero Card</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL 2: ADD / EDIT PROJECT (E-COMMERCE CASE STUDY) -->
+    <div class="admin-modal-overlay" id="projectModal">
+        <div class="admin-modal-box">
+            <div class="modal-header">
+                <h3 id="projectModalTitle">Add Project Case Study</h3>
+                <button class="modal-close-btn">&times;</button>
+            </div>
+            <form id="projectForm" style="display:flex; flex-direction:column; gap:16px;">
+                <input type="hidden" id="projectId">
+                <div class="form-group-row">
+                    <div class="form-field">
+                        <label for="projTitle">Project Title *</label>
+                        <input type="text" id="projTitle" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="projCategory">Category *</label>
+                        <select id="projCategory">
+                            <option value="Enterprise ERP">Enterprise ERP</option>
+                            <option value="Web Application">Web Application</option>
+                            <option value="Mobile App">Mobile App</option>
+                            <option value="AI & Cloud">AI & Cloud</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group-row">
+                    <div class="form-field">
+                        <label for="projClient">Client Name</label>
+                        <input type="text" id="projClient" placeholder="e.g. Global Logistics Ltd.">
+                    </div>
+                    <div class="form-field">
+                        <label for="projTimeline">Development Timeline</label>
+                        <input type="text" id="projTimeline" placeholder="e.g. 3 Months">
+                    </div>
+                </div>
+                <div class="form-field">
+                    <label for="projRole">Engineering Scope</label>
+                    <input type="text" id="projRole" placeholder="e.g. Full-Stack Architecture, UI/UX">
+                </div>
+                <div class="form-field">
+                    <label for="projMainImage">Main Image URL *</label>
+                    <input type="url" id="projMainImage" placeholder="https://..." required>
+                </div>
+                <div class="form-field">
+                    <label for="projGalleryImages">Gallery Screenshots (One URL per line)</label>
+                    <textarea id="projGalleryImages" rows="3" placeholder="https://...&#10;https://..."></textarea>
+                </div>
+                <div class="form-field">
+                    <label for="projShortDesc">Short Summary *</label>
+                    <textarea id="projShortDesc" rows="2" required></textarea>
+                </div>
+                <div class="form-group-row">
+                    <div class="form-field">
+                        <label for="projChallenge">The Challenge</label>
+                        <textarea id="projChallenge" rows="3"></textarea>
+                    </div>
+                    <div class="form-field">
+                        <label for="projSolution">Our Solution</label>
+                        <textarea id="projSolution" rows="3"></textarea>
+                    </div>
+                </div>
+                <div class="form-field">
+                    <label for="projFeatures">Key Features (One per line)</label>
+                    <textarea id="projFeatures" rows="3" placeholder="Feature 1&#10;Feature 2"></textarea>
+                </div>
+                <div class="form-field">
+                    <label for="projTechStack">Tech Stack (Comma separated)</label>
+                    <input type="text" id="projTechStack" placeholder="e.g. Vanilla JS, Node.js, PostgreSQL">
+                </div>
+                <div class="form-field">
+                    <label for="projTestimonial">Client Review / Testimonial</label>
+                    <input type="text" id="projTestimonial" placeholder="Great experience working with NilKishorIT...">
+                </div>
+                <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Save Project</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL 3: ADD / EDIT TEAM MEMBER -->
+    <div class="admin-modal-overlay" id="teamModal">
+        <div class="admin-modal-box">
+            <div class="modal-header">
+                <h3 id="teamModalTitle">Add Team Member</h3>
+                <button class="modal-close-btn">&times;</button>
+            </div>
+            <form id="teamMemberForm" style="display:flex; flex-direction:column; gap:16px;">
+                <input type="hidden" id="teamMemberId">
+                <div class="form-group-row">
+                    <div class="form-field">
+                        <label for="teamName">Full Name *</label>
+                        <input type="text" id="teamName" placeholder="e.g. Abdul Kader Imran" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="teamRole">Designation / Role *</label>
+                        <input type="text" id="teamRole" placeholder="e.g. Founder & Lead Architect" required>
+                    </div>
+                </div>
+                <div class="form-field">
+                    <label for="teamImage">Profile Image URL *</label>
+                    <input type="url" id="teamImage" placeholder="https://images.unsplash.com/..." required>
+                </div>
+                <div class="form-field">
+                    <label for="teamBio">Short Bio / Expertise *</label>
+                    <textarea id="teamBio" rows="2" placeholder="Experience, core strengths..." required></textarea>
+                </div>
+                <div class="form-field">
+                    <label for="teamSkills">Key Skills (Comma separated)</label>
+                    <input type="text" id="teamSkills" placeholder="e.g. System Design, Cloud Architecture, Full-Stack">
+                </div>
+                <div class="form-group-row">
+                    <div class="form-field">
+                        <label for="teamLinkedin">LinkedIn URL</label>
+                        <input type="url" id="teamLinkedin" placeholder="https://linkedin.com/in/...">
+                    </div>
+                    <div class="form-field">
+                        <label for="teamEmail">Work Email</label>
+                        <input type="email" id="teamEmail" placeholder="imran@nilkishorit.com">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Save Team Member</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL 3: ADMIN PASSWORD AUTHENTICATION -->
+    <div class="admin-modal-overlay" id="loginModal">
+        <div class="admin-modal-box login-modal-box">
+            <div style="font-size: 2.5rem; margin-bottom: 12px;">🔐</div>
+            <h3 style="font-size: 1.4rem; margin-bottom: 8px;">NilKishorIT Admin Access</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 24px;">
+                Enter your administrative key to manage live website data.
+            </p>
+            <form id="adminLoginForm">
+                <div class="form-field" style="margin-bottom: 16px;">
+                    <input type="password" id="adminPasswordInput" placeholder="Password (default: admin)"
+                        style="text-align: center; font-size: 1rem;" required autofocus>
+                </div>
+                <p id="loginError" style="display:none; color: #DC2626; font-size: 0.85rem; margin-bottom: 14px;">
+                    Incorrect password. Try again!
+                </p>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">
+                    Unlock Dashboard
+                </button>
+                <div style="margin-top: 16px; font-size: 0.8rem; color: #94A3B8;">
+                    Default Password: <code
+                        style="background:#E2E8F0; padding:2px 6px; border-radius:4px; color:#0F172A;">admin123</code>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts (Pure Vanilla JS) -->
+    <script src="js/data.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+
+</html>

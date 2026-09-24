@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NilKishorIT — Engineering Scalable Digital & Software Solutions</title>
+    <meta name="description"
+        content="NilKishorIT is a modern software engineering and IT solutions agency crafting enterprise ERPs, cloud web applications, and AI automation.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/hero-slider.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+    <!-- Top Utility & Admin Bar -->
+    <aside class="top-bar" id="announcementTopBar" aria-label="Top Utility Bar">
+        <div class="container">
+            <div class="top-bar-admin-wrap">
+                <a href="admin.html" class="top-bar-admin-btn" title="Open NilKishorIT Admin Dashboard">
+                    <span class="admin-icon">⚙️</span>
+                    <span>Admin Panel / Control Hub</span>
+                    <span class="admin-arrow">&rarr;</span>
+                </a>
+            </div>
+            <div class="top-bar-contact">
+                <a href="tel:+8801700000000" id="topBarPhone">+880 1581030425</a>
+                <span>•</span>
+                <a href="mailto:contact@nilkishorit.com" id="topBarEmail">nilkishorit@gmail.com</a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Header & Glass Sticky Navigation -->
+    <header class="navbar" id="mainNavbar">
+        <div class="container nav-container">
+            <!-- Brand Logo -->
+            <a href="index.html" class="brand-logo" aria-label="NilKishorIT Home">
+                <div class="logo-symbol">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="4 20 4 4 20 20 20 4"></polyline>
+                    </svg>
+                </div>
+                <span><span class="brand-name-text">NilKishorIT</span><span class="brand-accent">.</span></span>
+            </a>
+
+            <!-- Nav Links Hierarchy -->
+            <nav class="nav-menu" id="navMenu">
+                <!-- Mobile Drawer Header (Visible on Mobile only) -->
+                <div class="mobile-drawer-header">
+                    <div class="brand-logo" style="font-size: 1.2rem;">
+                        <div class="logo-symbol" style="width: 32px; height: 32px;">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="4 20 4 4 20 20 20 4"></polyline>
+                            </svg>
+                        </div>
+                        <span>NilKishorIT<span class="brand-accent">.</span></span>
+                    </div>
+                    <button class="mobile-drawer-close" id="mobileDrawerClose" aria-label="Close menu">&times;</button>
+                </div>
+
+                <a href="#about" class="nav-link">About Us</a>
+
+                <!-- Services Dropdown -->
+                <div class="nav-dropdown">
+                    <a href="#services" class="nav-link nav-dropdown-toggle">
+                        <span>Services</span>
+                        <svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2.5">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="#services" class="dropdown-item">
+                            <span class="dropdown-item-icon">💻</span>
+                            <div>
+                                <div class="dropdown-item-title">Web Development</div>
+                                <div class="dropdown-item-desc">High-performance responsive web apps</div>
+                            </div>
+                        </a>
+                        <a href="#services" class="dropdown-item">
+                            <span class="dropdown-item-icon">📱</span>
+                            <div>
+                                <div class="dropdown-item-title">App Development</div>
+                                <div class="dropdown-item-desc">iOS & Android mobile solutions</div>
+                            </div>
+                        </a>
+                        <a href="#services" class="dropdown-item">
+                            <span class="dropdown-item-icon">🎨</span>
+                            <div>
+                                <div class="dropdown-item-title">UI/UX Design</div>
+                                <div class="dropdown-item-desc">User-centric product architecture</div>
+                            </div>
+                        </a>
+                        <a href="#services" class="dropdown-item">
+                            <span class="dropdown-item-icon">🤖</span>
+                            <div>
+                                <div class="dropdown-item-title">AI / Machine Learning</div>
+                                <div class="dropdown-item-desc">Intelligent automation & LLMs</div>
+                            </div>
+                        </a>
+                        <a href="#services" class="dropdown-item">
+                            <span class="dropdown-item-icon">⚙️</span>
+                            <div>
+                                <div class="dropdown-item-title">Software Development</div>
+                                <div class="dropdown-item-desc">Enterprise ERP & custom software</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Projects Dropdown -->
+                <div class="nav-dropdown">
+                    <a href="#projects" class="nav-link nav-dropdown-toggle">
+                        <span>Projects</span>
+                        <svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2.5">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="project-detail.html?id=proj-1" class="dropdown-item">
+                            <span class="dropdown-item-icon">🏢</span>
+                            <div>
+                                <div class="dropdown-item-title">ApexCloud ERP</div>
+                                <div class="dropdown-item-desc">Enterprise logistics & resource planning</div>
+                            </div>
+                        </a>
+                        <a href="project-detail.html?id=proj-2" class="dropdown-item">
+                            <span class="dropdown-item-icon">🧠</span>
+                            <div>
+                                <div class="dropdown-item-title">NeuralCare AI</div>
+                                <div class="dropdown-item-desc">Clinical triage & diagnostics automation</div>
+                            </div>
+                        </a>
+                        <a href="project-detail.html?id=proj-3" class="dropdown-item">
+                            <span class="dropdown-item-icon">🛍️</span>
+                            <div>
+                                <div class="dropdown-item-title">VeloxStore Commerce</div>
+                                <div class="dropdown-item-desc">Headless omnichannel online store</div>
+                            </div>
+                        </a>
+                        <a href="project-detail.html?id=proj-1" class="dropdown-item dropdown-view-all">
+                            <span class="dropdown-item-icon">📑</span>
+                            <div>
+                                <div class="dropdown-item-title" style="color: var(--primary);">View Project Details
+                                    &rarr;</div>
+                                <div class="dropdown-item-desc">Explore full case study breakdown</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <a href="#process" class="nav-link">Our Process</a>
+                <a href="#team" class="nav-link">Team</a>
+                <a href="#careers" class="nav-link">Careers</a>
+                <a href="#blog" class="nav-link">Blog</a>
+                <a href="#contact" class="nav-link">Contact</a>
+
+                <!-- Mobile Drawer Footer (Visible on Mobile only) -->
+                <div class="mobile-drawer-footer">
+                    <a href="#contact" class="btn btn-primary" style="width:100%; justify-content:center;">Start a Project &rarr;</a>
+                    <div class="mobile-drawer-contact">
+                        <a href="tel:+8801700000000">📞 +880 1700-000000</a>
+                        <a href="mailto:contact@nilkishorit.com">✉️ contact@nilkishorit.com</a>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Nav Action Buttons -->
+            <div class="nav-actions">
+                <a href="#contact" class="btn btn-primary">Start a Project</a>
+                <button class="hamburger" id="hamburgerBtn" aria-label="Toggle mobile menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Dimmed backdrop overlay when drawer is open -->
+        <div class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>
+    </header>
+
+    <!-- HERO SECTION: IBM Consulting Exact Style -->
+    <section class="hero-section" id="home">
+
+        <!-- Top Banner: Dark Hero with Auto-Changing Slides & Backgrounds -->
+        <div class="ibm-top-banner" id="heroTopBanner">
+            <!-- Dynamic Slides Container -->
+            <div class="ibm-banner-slides" id="heroBannerSlides">
+                <!-- Rendered dynamically via js/hero-slider.js -->
+            </div>
+
+            <!-- Slide Navigation Arrows (Prev / Next) -->
+            <button class="ibm-banner-nav-btn prev" id="heroBannerPrev" aria-label="Previous Slide">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+            </button>
+            <button class="ibm-banner-nav-btn next" id="heroBannerNext" aria-label="Next Slide">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </button>
+
+            <!-- Bottom Slide Indicators / Pagination -->
+            <div class="ibm-banner-indicators" id="heroBannerIndicators">
+                <!-- Rendered dynamically -->
+            </div>
+        </div>
+
+        <!-- Middle Section: "Orchestrate AI at scale" -->
+        <div class="ibm-orchestrate-section">
+            <div class="container">
+                <h2 class="ibm-orchestrate-title">Orchestrate AI at scale</h2>
+
+                <div class="ibm-orchestrate-grid">
+                    <!-- Left: 2 Paragraphs -->
+                    <div class="ibm-orchestrate-text">
+                        <p>
+                            <strong>NilKishorIT Consulting&reg;</strong> is where trusted expertise meets powerful
+                            technology. As a dedicated digital and software engineering partner, we drive high-impact
+                            outcomes using advanced software architecture, cloud platforms, and tailored AI solutions to
+                            tackle your most critical challenges.
+                        </p>
+                        <p>
+                            Partnering directly with clients, we advise, design, build and operate business innovation
+                            that matters and results that last.
+                        </p>
+                    </div>
+
+                    <!-- Right: Video Box with Lab Image, Play Button & Caption -->
+                    <div class="ibm-video-box-wrap">
+                        <div class="ibm-video-box"
+                            onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})"
+                            title="Watch NilKishorIT Overview">
+                            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=900&q=80"
+                                alt="Building a Smarter Business with NilKishorIT" class="ibm-video-img">
+                            <button class="ibm-video-play-btn" aria-label="Play Video">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="ibm-video-caption">
+                            Building a Smarter Business with NilKishorIT (1:32 min)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom: 4 Service Cards Row -->
+        <div class="ibm-hero-cards-section">
+            <div class="container">
+                <div class="ibm-hero-cards-grid" id="heroCardsTrack">
+                    <!-- Loaded dynamically via js/hero-slider.js -->
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Trust / Partner Logos -->
+    <section class="trust-bar">
+        <div class="container">
+            <p class="trust-title">Trusted By Visionary Leaders & Growing Enterprises</p>
+            <div class="trust-logos">
+                <div class="trust-item"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2">
+                        <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                    </svg> APEX CLOUD</div>
+                <div class="trust-item"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                    </svg> BIOMED GLOBAL</div>
+                <div class="trust-item"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2">
+                        <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                    </svg> VELOX COMMERCE</div>
+                <div class="trust-item"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                    </svg> PAYPULSE FINANCIAL</div>
+                <div class="trust-item"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2">
+                        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                    </svg> NOVA AUTOMATION</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About & Animated Live Counters -->
+    <section class="section-padding bg-alt" id="about">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-tag">About NilKishorIT</span>
+                <h2 class="section-title">We Don't Just Write Code. We Build Solutions.</h2>
+                <p class="section-subtitle">
+                    From deep architecture to production deployment, our engineering team transforms complex business
+                    bottlenecks into effortless, scalable digital software.
+                </p>
+            </div>
+
+            <!-- Animated Counters -->
+            <div class="stats-grid" id="statsSection">
+                <div class="stat-card">
+                    <div class="stat-number" id="cntYears" data-target="5">0</div>
+                    <div class="stat-label">Years of Innovation</div>
+                    <div class="stat-desc">Proven industry experience</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="cntProjects" data-target="45">0</div>
+                    <div class="stat-label">Enterprise Projects</div>
+                    <div class="stat-desc">Shipped with zero downtime</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="cntExperts" data-target="20">0</div>
+                    <div class="stat-label">Engineers & Designers</div>
+                    <div class="stat-desc">Full-stack software talent</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="cntClients" data-target="35">0</div>
+                    <div class="stat-label">Satisfied Clients</div>
+                    <div class="stat-desc">Global long-term partners</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Services Section -->
+    <section class="section-padding" id="services">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-tag">Capabilities</span>
+                <h2 class="section-title">Comprehensive Engineering Services</h2>
+                <p class="section-subtitle">
+                    Tailored software architectures designed to scale effortlessly as your business grows.
+                </p>
+            </div>
+
+            <div class="services-grid" id="servicesContainer">
+                <!-- Loaded dynamically from data.js -->
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURED PROJECTS (E-Commerce Style Clickable Showcase) -->
+    <section class="section-padding bg-alt" id="projects">
+        <div class="container">
+            <div class="projects-header-filter">
+                <div>
+                    <span class="section-tag">Case Studies</span>
+                    <h2 class="section-title" style="margin-bottom: 0;">Featured Work & Projects</h2>
+                    <p style="color: var(--text-muted); margin-top: 6px;">Click on any project to explore full
+                        architectural details and technical case studies.</p>
+                </div>
+                <!-- Filter Tabs -->
+                <div class="filter-btn-group">
+                    <button class="filter-btn active" data-filter="all">All Projects</button>
+                    <button class="filter-btn" data-filter="Enterprise">Enterprise ERP</button>
+                    <button class="filter-btn" data-filter="Web">Web Apps</button>
+                    <button class="filter-btn" data-filter="Mobile">Mobile Apps</button>
+                    <button class="filter-btn" data-filter="AI">AI & Cloud</button>
+                </div>
+            </div>
+
+            <!-- Project Cards Grid -->
+            <div class="projects-grid" id="projectsContainer">
+                <!-- Loaded dynamically from data.js -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Our 6-Step Workflow Process -->
+    <section class="section-padding" id="process">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-tag">Proven Methodology</span>
+                <h2 class="section-title">How We Turn Ideas Into Impact</h2>
+                <p class="section-subtitle">
+                    A battle-tested agile development process ensuring predictable delivery and enterprise-grade
+                    reliability.
+                </p>
+            </div>
+
+            <div class="process-grid">
+                <div class="process-step-card">
+                    <div class="process-num">01</div>
+                    <h3 class="process-step-title">Discover</h3>
+                    <p class="process-step-desc">Requirement discovery and comprehensive architectural scoping.</p>
+                </div>
+                <div class="process-step-card">
+                    <div class="process-num">02</div>
+                    <h3 class="process-step-title">Blueprint</h3>
+                    <p class="process-step-desc">Selecting resilient tech stack and mapping milestone roadmap.</p>
+                </div>
+                <div class="process-step-card">
+                    <div class="process-num">03</div>
+                    <h3 class="process-step-title">Design</h3>
+                    <p class="process-step-desc">High-fidelity UI/UX design with interactive user journeys.</p>
+                </div>
+                <div class="process-step-card">
+                    <div class="process-num">04</div>
+                    <h3 class="process-step-title">Develop</h3>
+                    <p class="process-step-desc">Agile sprint cycles, clean code, and microservice APIs.</p>
+                </div>
+                <div class="process-step-card">
+                    <div class="process-num">05</div>
+                    <h3 class="process-step-title">QA Test</h3>
+                    <p class="process-step-desc">Automated stress testing, security audits & penetration tests.</p>
+                </div>
+                <div class="process-step-card">
+                    <div class="process-num">06</div>
+                    <h3 class="process-step-title">Deploy</h3>
+                    <p class="process-step-desc">Zero-downtime release, CI/CD pipeline and 24/7 SLA maintenance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Stack Explorer -->
+    <section class="section-padding bg-alt" id="tech">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-tag">Technology Foundation</span>
+                <h2 class="section-title">Technologies We Master</h2>
+                <p class="section-subtitle">We select the right tools for speed, security, and long-term scalability.
+                </p>
+            </div>
+
+            <!-- Tech Tabs -->
+            <div class="tech-tabs" style="margin-top: 40px;" id="techTabsContainer">
+                <button class="tech-tab-btn active" data-tech="all">All Stack</button>
+                <button class="tech-tab-btn" data-tech="frontend">Frontend</button>
+                <button class="tech-tab-btn" data-tech="backend">Backend & DB</button>
+                <button class="tech-tab-btn" data-tech="mobile">Mobile Apps</button>
+                <button class="tech-tab-btn" data-tech="cloud">Cloud & AI</button>
+            </div>
+
+            <div class="tech-grid" id="techGridContainer">
+                <!-- Dynamically rendered based on active tab -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet Our Team Section -->
+    <section class="section-padding" id="team">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-tag">Talent Behind NilKishorIT</span>
+                <h2 class="section-title">Meet Our Leadership & Engineering Team</h2>
+                <p class="section-subtitle">A collective of senior software architects, product designers, and
+                    full-stack innovators.</p>
+            </div>
+
+            <div class="team-grid" id="teamGridContainer">
+                <!-- Loaded dynamically from data.js -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose NilKishorIT -->
+    <section class="section-padding bg-alt">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-tag">Why NilKishorIT</span>
+                <h2 class="section-title">Built for Enterprise Dependability</h2>
+                <p class="section-subtitle">The principles that set our engineering agency apart.</p>
+            </div>
+
+            <div class="why-us-grid">
+                <div class="why-card">
+                    <div class="why-icon">🛡️</div>
+                    <h3 class="why-title">Bulletproof Security</h3>
+                    <p class="why-desc">We follow strict OWASP standards and end-to-end data encryption across every API
+                        endpoint.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">🚀</div>
+                    <h3 class="why-title">Blazing Performance</h3>
+                    <p class="why-desc">Optimized rendering and sub-second response times that maximize user retention.
+                    </p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">💬</div>
+                    <h3 class="why-title">Transparent Comms</h3>
+                    <p class="why-desc">Direct Slack/Teams channel with developers, daily sprint updates, and clear
+                        timelines.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">🤝</div>
+                    <h3 class="why-title">Post-Launch Warranty</h3>
+                    <p class="why-desc">Comprehensive bug-fix warranty and ongoing infrastructure optimization support.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Testimonials Slider -->
+    <section class="section-padding bg-alt" id="testimonials">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-tag">Client Reviews</span>
+                <h2 class="section-title">What Leaders Say About Us</h2>
+            </div>
+
+            <div class="testimonial-container">
+                <div class="quote-icon">“</div>
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-quote" id="testimonialQuote">
+                    "Working with NilKishorIT was transformative for our logistics company. Their software architecture
+                    is robust, fast, and remarkably easy to use."
+                </p>
+                <div class="testimonial-author-name" id="testimonialAuthor">Marcus Vance</div>
+                <div class="testimonial-author-title" id="testimonialTitle">Chief Operating Officer, Global Logistics
+                    Ltd.</div>
+
+                <div class="testimonial-nav-btns">
+                    <button class="slider-btn" id="testiPrev" aria-label="Previous review">&#10094;</button>
+                    <button class="slider-btn" id="testiNext" aria-label="Next review">&#10095;</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Accordion -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-tag">Frequently Asked Questions</span>
+                <h2 class="section-title">Got Questions? We Have Answers.</h2>
+            </div>
+
+            <div class="faq-list">
+                <div class="faq-item active">
+                    <div class="faq-question">
+                        <span>How quickly can NilKishorIT start my development project?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        After our initial discovery call and requirements confirmation, we typically kick off UI/UX
+                        architecture within 48 to 72 hours.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Do I retain 100% ownership of the source code?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Yes, absolutely. Once final delivery milestones are signed off, complete source code
+                        repositories, intellectual property rights, and deployment credentials are fully transferred to
+                        you.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can NilKishorIT maintain and scale existing legacy software?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Yes. Our engineers specialize in legacy code refactoring, database migration, and cloud
+                        modernizations without breaking live services.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Careers Section -->
+    <section class="section-padding bg-alt" id="careers">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-tag">Join Our Team</span>
+                <h2 class="section-title">Build The Future With Us</h2>
+                <p class="section-subtitle">We are always searching for passionate engineers, designers, and problem
+                    solvers.</p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 50px;">
+                <div class="service-card" style="padding: 28px;">
+                    <span class="section-tag" style="font-size:0.75rem; margin-bottom:8px;">Full-Time • Remote</span>
+                    <h3 style="font-size:1.25rem; margin-bottom:8px;">Senior Frontend Engineer</h3>
+                    <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:16px;">Pure JS, modern reactive
+                        DOM, CSS architecture & performance optimization.</p>
+                    <a href="#contact" class="btn btn-secondary"
+                        style="width:100%; font-size:0.85rem; padding:10px;">Apply Now &rarr;</a>
+                </div>
+                <div class="service-card" style="padding: 28px;">
+                    <span class="section-tag" style="font-size:0.75rem; margin-bottom:8px;">Full-Time • Dhaka /
+                        Hybrid</span>
+                    <h3 style="font-size:1.25rem; margin-bottom:8px;">Backend & Database Architect</h3>
+                    <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:16px;">Node.js, PostgreSQL
+                        scaling, distributed systems and RESTful APIs.</p>
+                    <a href="#contact" class="btn btn-secondary"
+                        style="width:100%; font-size:0.85rem; padding:10px;">Apply Now &rarr;</a>
+                </div>
+                <div class="service-card" style="padding: 28px;">
+                    <span class="section-tag" style="font-size:0.75rem; margin-bottom:8px;">Full-Time • Remote</span>
+                    <h3 style="font-size:1.25rem; margin-bottom:8px;">Product UI/UX Designer</h3>
+                    <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:16px;">Figma design systems,
+                        interactive prototyping, and user journey mapping.</p>
+                    <a href="#contact" class="btn btn-secondary"
+                        style="width:100%; font-size:0.85rem; padding:10px;">Apply Now &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog & Technical Resources Section -->
+    <section class="section-padding" id="blog">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-tag">Latest Insights</span>
+                <h2 class="section-title">Engineering Knowledge & Articles</h2>
+                <p class="section-subtitle">Deep dives into modern web performance, scalable architecture, and AI
+                    automation.</p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 50px;">
+                <article class="service-card" style="padding: 0; overflow: hidden;">
+                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=600&q=80"
+                        alt="Code Architecture" style="width:100%; height:200px; object-fit:cover;">
+                    <div style="padding: 24px;">
+                        <span class="tech-tag" style="margin-bottom:8px; display:inline-block;">Engineering • 5 min
+                            read</span>
+                        <h3 style="font-size:1.2rem; margin-bottom:10px; line-height:1.35;">Building Scalable Enterprise
+                            ERPs with Zero Framework Bloat</h3>
+                        <p style="color:var(--text-muted); font-size:0.88rem; margin-bottom:14px;">How modular codebases
+                            outperform heavy SPA frameworks in operational efficiency.</p>
+                        <a href="#contact" class="service-card-link">Read Full Article &rarr;</a>
+                    </div>
+                </article>
+                <article class="service-card" style="padding: 0; overflow: hidden;">
+                    <img src="https://images.unsplash.com/photo-1677442136019-21780efad99a?auto=format&fit=crop&w=600&q=80"
+                        alt="Artificial Intelligence" style="width:100%; height:200px; object-fit:cover;">
+                    <div style="padding: 24px;">
+                        <span class="tech-tag" style="margin-bottom:8px; display:inline-block;">AI & Automation • 4 min
+                            read</span>
+                        <h3 style="font-size:1.2rem; margin-bottom:10px; line-height:1.35;">Integrating LLM Assistants
+                            into Traditional CRM Platforms</h3>
+                        <p style="color:var(--text-muted); font-size:0.88rem; margin-bottom:14px;">A blueprint for
+                            reducing corporate customer support response times by 60%.</p>
+                        <a href="#contact" class="service-card-link">Read Full Article &rarr;</a>
+                    </div>
+                </article>
+                <article class="service-card" style="padding: 0; overflow: hidden;">
+                    <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80"
+                        alt="FinTech Security" style="width:100%; height:200px; object-fit:cover;">
+                    <div style="padding: 24px;">
+                        <span class="tech-tag" style="margin-bottom:8px; display:inline-block;">Cybersecurity • 6 min
+                            read</span>
+                        <h3 style="font-size:1.2rem; margin-bottom:10px; line-height:1.35;">Mobile App Payload
+                            Cryptography and OWASP Compliance</h3>
+                        <p style="color:var(--text-muted); font-size:0.88rem; margin-bottom:14px;">Best practices for
+                            handling sensitive transactions on Android and iOS.</p>
+                        <a href="#contact" class="service-card-link">Read Full Article &rarr;</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Project Inquiry Section -->
+    <section class="section-padding bg-alt" id="contact">
+        <div class="container">
+            <div class="contact-wrapper">
+                <!-- Info Column -->
+                <div class="contact-info-side">
+                    <div>
+                        <span class="section-tag">Let's Talk</span>
+                        <h2 class="section-title">Have An Ambitious Project? Let's Build It Together.</h2>
+                        <p style="color: var(--text-muted); margin-bottom: 30px;">
+                            Reach out for a comprehensive project estimation, technical architecture consultation, or
+                            custom software proposal.
+                        </p>
+                    </div>
+
+                    <div class="contact-direct-items">
+                        <div class="contact-card-box">
+                            <div class="contact-card-icon">✉️</div>
+                            <div>
+                                <div
+                                    style="font-size: 0.8rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;">
+                                    Email Inquiry</div>
+                                <div style="font-weight: 700; color: var(--text-heading);">contact@nilkishorit.com</div>
+                            </div>
+                        </div>
+                        <div class="contact-card-box">
+                            <div class="contact-card-icon">📞</div>
+                            <div>
+                                <div
+                                    style="font-size: 0.8rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;">
+                                    Phone Support</div>
+                                <div style="font-weight: 700; color: var(--text-heading);">+880 1700-000000</div>
+                            </div>
+                        </div>
+                        <div class="contact-card-box">
+                            <div class="contact-card-icon">📍</div>
+                            <div>
+                                <div
+                                    style="font-size: 0.8rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;">
+                                    Location</div>
+                                <div style="font-weight: 700; color: var(--text-heading);">Dhaka, Bangladesh</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form Column -->
+                <div>
+                    <form class="contact-form" id="projectInquiryForm">
+                        <div class="form-group-row">
+                            <div class="form-field">
+                                <label for="clientName">Your Name *</label>
+                                <input type="text" id="clientName" placeholder="e.g. John Doe" required>
+                            </div>
+                            <div class="form-field">
+                                <label for="clientEmail">Email Address *</label>
+                                <input type="email" id="clientEmail" placeholder="e.g. john@company.com" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group-row">
+                            <div class="form-field">
+                                <label for="clientPhone">Phone / WhatsApp</label>
+                                <input type="tel" id="clientPhone" placeholder="+880 ...">
+                            </div>
+                            <div class="form-field">
+                                <label for="clientService">Interested Service *</label>
+                                <select id="clientService">
+                                    <option value="Enterprise ERP">Enterprise ERP & CRM</option>
+                                    <option value="Web Development">Custom Web Application</option>
+                                    <option value="Mobile App">Mobile App (iOS/Android)</option>
+                                    <option value="UI/UX Design">UI/UX & Product Design</option>
+                                    <option value="AI & Automation">AI & Automation</option>
+                                    <option value="Cloud DevOps">Cloud & Infrastructure</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="clientBudget">Estimated Budget Range</label>
+                            <select id="clientBudget">
+                                <option value="$1,000 - $3,000">$1,000 - $3,000</option>
+                                <option value="$3,000 - $10,000">$3,000 - $10,000</option>
+                                <option value="$10,000+">$10,000+ (Enterprise)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="clientMessage">Tell Us About Your Project *</label>
+                            <textarea id="clientMessage"
+                                placeholder="Describe the challenges, scope, timeline, and key requirements..."
+                                required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 15px;">
+                            Send Project Inquiry &rarr;
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Corporate Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3><span class="brand-name-text">NilKishorIT</span><span style="color:var(--primary);">.</span>
+                    </h3>
+                    <p style="line-height: 1.6; margin-bottom: 20px;">
+                        Engineering robust enterprise software, scalable cloud systems, and high-impact digital
+                        experiences for ambitious businesses worldwide.
+                    </p>
+                    <div style="font-size: 0.85rem; color: #64748B;">
+                        Clean White Corporate Edition • Pure HTML, CSS & Vanilla JS
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="footer-col-title">Navigation</h4>
+                    <div class="footer-links">
+                        <a href="#home">Home</a>
+                        <a href="#about">About Us</a>
+                        <a href="#services">Services</a>
+                        <a href="#projects">Case Studies</a>
+                        <a href="#process">Our Process</a>
+                        <a href="admin.html">Admin Portal</a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="footer-col-title">Core Services</h4>
+                    <div class="footer-links">
+                        <a href="#services">Enterprise ERP</a>
+                        <a href="#services">Web Applications</a>
+                        <a href="#services">Mobile Apps</a>
+                        <a href="#services">AI Automation</a>
+                        <a href="#services">Cloud & DevOps</a>
+                    </div>
+                </div>
+
+                <div class="footer-newsletter">
+                    <h4 class="footer-col-title">Stay Connected</h4>
+                    <p>Subscribe for our monthly technology reports and software architecture guides.</p>
+                    <div class="newsletter-box">
+                        <input type="email" placeholder="Your work email...">
+                        <button class="btn btn-primary" style="padding: 8px 16px;">Join</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>&copy; 2026 <span class="brand-name-text">NilKishorIT</span>. All rights reserved.</div>
+                <div style="display:flex; gap: 20px;">
+                    <a href="#home">Privacy Policy</a>
+                    <a href="#home">Terms of Service</a>
+                    <a href="admin.html">Admin Console</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Alert Toast Message Notification -->
+    <div class="toast-msg" id="toastAlert" role="alert">
+        <span style="font-size: 1.3rem;">🚀</span>
+        <span id="toastMessageText">Message received!</span>
+    </div>
+
+    <!-- Scroll-To-Top Button -->
+    <button class="scroll-top-btn" id="scrollTopBtn" aria-label="Scroll to top">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
+
+    <!-- Project Quickview Modal Popup (In-Page Lightbox) -->
+    <div class="project-modal-backdrop" id="projectQuickModal" role="dialog" aria-modal="true">
+        <div class="project-modal-content">
+            <button class="project-modal-close" id="closeQuickModal" aria-label="Close modal">&times;</button>
+            <div id="quickModalBody">
+                <!-- Dynamically loaded on quickview click -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts (Pure Vanilla JS) -->
+    <script src="js/data.js"></script>
+    <script src="js/hero-slider.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details & Case Study — NilKishorIT</title>
+    <meta name="description"
+        content="Detailed engineering case study and interactive specifications of projects developed by NilKishorIT.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/project-detail.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+    <!-- Header Navigation -->
+    <header class="navbar" id="mainNavbar">
+        <div class="container nav-container">
+            <!-- Brand Logo -->
+            <a href="index.html" class="brand-logo" aria-label="NilKishorIT Home">
+                <div class="logo-symbol">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="4 20 4 4 20 20 20 4"></polyline>
+                    </svg>
+                </div>
+                <span><span class="brand-name-text">NilKishorIT</span><span class="brand-accent">.</span></span>
+            </a>
+
+            <!-- Nav Links -->
+            <nav class="nav-menu" id="navMenu">
+                <!-- Mobile Drawer Header -->
+                <div class="mobile-drawer-header">
+                    <div class="brand-logo" style="font-size: 1.2rem;">
+                        <div class="logo-symbol" style="width: 32px; height: 32px;">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="4 20 4 4 20 20 20 4"></polyline>
+                            </svg>
+                        </div>
+                        <span>NilKishorIT<span class="brand-accent">.</span></span>
+                    </div>
+                    <button class="mobile-drawer-close" id="mobileDrawerClose" aria-label="Close menu">&times;</button>
+                </div>
+
+                <a href="index.html#about" class="nav-link">About Us</a>
+                <a href="index.html#services" class="nav-link">Services</a>
+                <a href="index.html#projects" class="nav-link active">Projects</a>
+                <a href="index.html#process" class="nav-link">Our Process</a>
+                <a href="index.html#team" class="nav-link">Team</a>
+                <a href="index.html#careers" class="nav-link">Careers</a>
+                <a href="index.html#blog" class="nav-link">Blog</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+
+                <!-- Mobile Drawer Footer -->
+                <div class="mobile-drawer-footer">
+                    <a href="index.html#contact" class="btn btn-primary" style="width:100%; justify-content:center;">Start a Project &rarr;</a>
+                    <div class="mobile-drawer-contact">
+                        <a href="tel:+8801700000000">📞 +880 1700-000000</a>
+                        <a href="mailto:contact@nilkishorit.com">✉️ contact@nilkishorit.com</a>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Nav Action Buttons -->
+            <div class="nav-actions">
+                <a href="index.html#contact" class="btn btn-primary">Start a Project</a>
+                <button class="hamburger" id="hamburgerBtn" aria-label="Toggle mobile menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Dimmed backdrop overlay when drawer is open -->
+        <div class="mobile-nav-backdrop" id="mobileNavBackdrop"></div>
+    </header>
+
+    <!-- Page Breadcrumb & Header Title -->
+    <section class="project-detail-header">
+        <div class="container">
+            <div class="breadcrumb-nav">
+                <a href="index.html">Home</a>
+                <span class="breadcrumb-separator">/</span>
+                <a href="index.html#projects">Projects</a>
+                <span class="breadcrumb-separator">/</span>
+                <span id="breadcrumbCategory" style="color: var(--primary);">Enterprise ERP</span>
+                <span class="breadcrumb-separator">/</span>
+                <span id="breadcrumbTitle" style="color: var(--text-heading); font-weight: 600;">ApexCloud</span>
+            </div>
+
+            <span class="detail-category-badge" id="detailCategory">Enterprise ERP</span>
+            <h1 class="detail-headline" id="detailTitle">ApexCloud - Intelligent Enterprise ERP</h1>
+        </div>
+    </section>
+
+    <!-- Main Container -->
+    <main class="container" id="projectDetailContainer">
+        <!-- E-COMMERCE PRODUCT STYLE LAYOUT:
+             Left: Interactive Image Gallery with Thumbnails
+             Right: Specifications, Overview, Tech Stack & Action CTA -->
+        <section class="project-product-layout">
+            <!-- Left: Interactive Gallery -->
+            <div class="gallery-container">
+                <div class="main-image-viewport">
+                    <img id="mainProjectImage" src="" alt="Project Screenshot View" class="main-project-img">
+                </div>
+                <!-- Thumbnails Strip (Click to change main image) -->
+                <div class="thumbnail-strip" id="thumbnailStrip">
+                    <!-- Loaded dynamically -->
+                </div>
+            </div>
+
+            <!-- Right: Project Specifications Card -->
+            <div class="project-specs-card">
+                <h2 class="specs-title">Project Specifications</h2>
+
+                <div class="meta-grid">
+                    <div>
+                        <div class="meta-item-label">Client / Partner</div>
+                        <div class="meta-item-value" id="specClient">Global Logistics Ltd.</div>
+                    </div>
+                    <div>
+                        <div class="meta-item-label">Timeline</div>
+                        <div class="meta-item-value" id="specTimeline">4 Months</div>
+                    </div>
+                    <div style="grid-column: 1/-1;">
+                        <div class="meta-item-label">Engineering Scope</div>
+                        <div class="meta-item-value" id="specRole">Full-Stack Architecture, UI/UX & Cloud DevOps</div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="meta-item-label">Overview</div>
+                    <p class="specs-summary-text" id="specOverview">
+                        A complete enterprise resource planning suite for multinational logistics and manufacturing
+                        firms.
+                    </p>
+                </div>
+
+                <div class="tech-chips-group">
+                    <div class="meta-item-label">Technology Stack</div>
+                    <div class="tech-chips-list" id="detailTechChips">
+                        <!-- Loaded dynamically -->
+                    </div>
+                </div>
+
+                <!-- Action CTA Buttons (E-Commerce style) -->
+                <div class="specs-action-buttons">
+                    <a href="#" id="liveDemoBtn" target="_blank" class="btn btn-primary live-preview-btn">
+                        <span>🌐 Visit Live Application</span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            <polyline points="15 3 21 3 21 9"></polyline>
+                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                        </svg>
+                    </a>
+                    <a href="index.html#contact" class="btn btn-secondary order-similar-btn">
+                        <span>📩 Order a Similar Solution</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CASE STUDY STORY: Challenge, Solution, Key Features & Review-->
+        <section class="case-study-details-section">
+            <div class="story-grid">
+                <div class="story-card">
+                    <h3 class="story-card-title">
+                        <span style="color:#DC2626;">⚠️</span> The Challenge
+                    </h3>
+                    <p id="challengeText">Loading challenge description...</p>
+                </div>
+                <div class="story-card">
+                    <h3 class="story-card-title">
+                        <span style="color:#10B981;">💡</span> Our Solution
+                    </h3>
+                    <p id="solutionText">Loading engineering solution...</p>
+                </div>
+            </div>
+
+            <!-- Key Features Checklist -->
+            <div class="features-checklist-card">
+                <h3 style="font-size: 1.3rem; margin-bottom: 8px;">Key Architectural Features</h3>
+                <p style="color: var(--text-muted); font-size: 0.92rem;">Delivered with zero vulnerability & scalable
+                    code standards.</p>
+                <div class="checklist-grid" id="featuresChecklist">
+                    <!-- Loaded dynamically -->
+                </div>
+            </div>
+
+            <!-- Client Review & Testimonial -->
+            <div class="project-review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-quote" id="detailReviewQuote">
+                    "NilKishorIT completely revolutionized our daily logistics operations. Inventory discrepancy dropped
+                    to zero in just 30 days."
+                </p>
+                <div style="font-weight: 700; color: var(--text-heading);" id="detailReviewAuthor">
+                    — Global Logistics Ltd.
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Project Not Found State -->
+    <div id="projectNotFound" style="display:none; text-align:center; padding: 100px 20px;">
+        <h2 style="font-size: 2rem; margin-bottom: 14px;">Project Not Found</h2>
+        <p style="color: var(--text-muted); margin-bottom: 24px;">The case study you are looking for has either been
+            moved or removed.</p>
+        <a href="index.html#projects" class="btn btn-primary">Return to Projects</a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container text-center" style="font-size: 0.9rem;">
+            &copy; 2026 NilKishorIT. All rights reserved. • <a href="index.html" style="color: #38BDF8;">Back to
+                Homepage</a>
+        </div>
+    </footer>
+
+    <!-- Scripts (Pure Vanilla JS) -->
+    <script src="js/data.js"></script>
+    <script src="js/project-detail.js"></script>
+</body>
+
+</html>

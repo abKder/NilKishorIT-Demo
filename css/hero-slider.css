@@ -1,0 +1,630 @@
+/* ===================================================================
+   NilKishorIT — IBM Consulting Hero Section Stylesheet
+   Features:
+   - Dynamic auto-transitioning slides & background image cross-fade
+   - Ken Burns subtle smooth zoom effect
+   - Floating navigation arrows (hover reveal & mobile ready)
+   - Progress bar pagination indicators
+   - Middle "Orchestrate AI at scale" section with video preview
+   - Bottom 4 Service cards with authentic photography thumbnails
+   =================================================================== */
+
+/* ── 1. Hero Top Banner with Dynamic Carousel ────────────────────── */
+.hero-section {
+    background: #FFFFFF;
+    position: relative;
+    border-bottom: 1px solid #E0E0E0;
+}
+
+.ibm-top-banner {
+    position: relative;
+    min-height: 520px;
+    background: #0A101C;
+    overflow: hidden;
+    display: flex;
+    align-items: stretch;
+    border-bottom: 1px solid #262626;
+}
+
+/* Slides Container */
+.ibm-banner-slides {
+    position: relative;
+    width: 100%;
+    min-height: 520px;
+    display: flex;
+}
+
+/* Individual Slide */
+.ibm-banner-slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center right;
+    background-repeat: no-repeat;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.04);
+    transition: opacity 0.85s cubic-bezier(0.4, 0, 0.2, 1), transform 6s cubic-bezier(0.1, 0.9, 0.2, 1);
+    display: flex;
+    align-items: center;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Active Slide */
+.ibm-banner-slide.active {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+    z-index: 2;
+    pointer-events: auto;
+}
+
+/* Slide Content Container */
+.ibm-banner-container {
+    width: 100%;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 60px 24px 70px;
+    position: relative;
+    z-index: 3;
+}
+
+/* Breadcrumb */
+.ibm-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    margin-bottom: 22px;
+}
+
+.ibm-breadcrumb .bc-link {
+    color: #78A9FF;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.15s ease;
+}
+
+.ibm-breadcrumb .bc-link:hover {
+    color: #A6C8FF;
+    text-decoration: underline;
+}
+
+.ibm-breadcrumb .bc-sep {
+    color: #8D8D8D;
+    font-size: 0.85rem;
+}
+
+.ibm-breadcrumb .bc-current {
+    color: #F4F4F4;
+    font-weight: 400;
+}
+
+/* Hero Headline */
+.ibm-hero-title {
+    font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 3.3rem;
+    font-weight: 600;
+    color: #FFFFFF;
+    line-height: 1.16;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+    max-width: 760px;
+}
+
+.ibm-banner-slide.active .ibm-hero-title {
+    animation: ibmSlideUp 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Hero Subtitle */
+.ibm-hero-sub {
+    font-size: 1.1rem;
+    line-height: 1.65;
+    color: #D1D5DB;
+    max-width: 580px;
+    margin-bottom: 34px;
+    font-weight: 400;
+}
+
+.ibm-banner-slide.active .ibm-hero-sub {
+    animation: ibmSlideUp 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* CTA Row (IBM Carbon Style) */
+.ibm-cta-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.ibm-banner-slide.active .ibm-cta-row {
+    animation: ibmSlideUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.ibm-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #0F62FE;
+    color: #FFFFFF;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 14px 28px;
+    border: 2px solid #0F62FE;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.18s ease;
+    white-space: nowrap;
+}
+
+.ibm-btn-primary:hover {
+    background: #0043CE;
+    border-color: #0043CE;
+    color: #FFFFFF;
+    transform: translateY(-1px);
+}
+
+.ibm-btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    color: #FFFFFF;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 14px 28px;
+    border: 2px solid #FFFFFF;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease, transform 0.18s ease;
+    white-space: nowrap;
+}
+
+.ibm-btn-outline:hover {
+    background: #FFFFFF;
+    color: #161616;
+    transform: translateY(-1px);
+}
+
+.ibm-btn-primary svg,
+.ibm-btn-outline svg {
+    transition: transform 0.2s ease;
+}
+
+.ibm-btn-primary:hover svg,
+.ibm-btn-outline:hover svg {
+    transform: translateX(4px);
+}
+
+/* Slide Navigation Arrows */
+.ibm-banner-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 46px;
+    height: 46px;
+    background: rgba(16, 24, 40, 0.65);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 2px;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.25s ease, background 0.2s ease, transform 0.2s ease;
+}
+
+.ibm-banner-nav-btn.prev {
+    left: 24px;
+}
+
+.ibm-banner-nav-btn.next {
+    right: 24px;
+}
+
+.ibm-top-banner:hover .ibm-banner-nav-btn {
+    opacity: 1;
+}
+
+.ibm-banner-nav-btn:hover {
+    background: #0F62FE;
+    border-color: #0F62FE;
+    transform: translateY(-50%) scale(1.06);
+}
+
+/* Pagination Indicators */
+.ibm-banner-indicators {
+    position: absolute;
+    bottom: 22px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    z-index: 10;
+}
+
+.ibm-indicator-btn {
+    width: 28px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.35);
+    border: none;
+    cursor: pointer;
+    border-radius: 2px;
+    padding: 0;
+    transition: width 0.3s ease, background 0.3s ease;
+}
+
+.ibm-indicator-btn:hover {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.ibm-indicator-btn.active {
+    width: 44px;
+    background: #0F62FE;
+}
+
+/* Keyframes for content entrance */
+@keyframes ibmSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ── 2. Middle Section: "Orchestrate AI at scale" ────────────────────── */
+.ibm-orchestrate-section {
+    background: #FFFFFF;
+    padding: 68px 0 54px;
+    border-bottom: 1px solid #E5E7EB;
+}
+
+.ibm-orchestrate-title {
+    font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: #161616;
+    letter-spacing: -0.015em;
+    margin-bottom: 36px;
+}
+
+.ibm-orchestrate-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+/* Left Paragraphs */
+.ibm-orchestrate-text p {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: #525252;
+    margin-bottom: 22px;
+}
+
+.ibm-orchestrate-text p:last-child {
+    margin-bottom: 0;
+}
+
+.ibm-orchestrate-text strong {
+    color: #161616;
+    font-weight: 600;
+}
+
+/* Right Video Box */
+.ibm-video-box-wrap {
+    width: 100%;
+}
+
+.ibm-video-box {
+    position: relative;
+    width: 100%;
+    height: 290px;
+    border-radius: 2px;
+    overflow: hidden;
+    background: #000000;
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.ibm-video-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.ibm-video-box:hover .ibm-video-img {
+    transform: scale(1.02);
+    filter: brightness(0.92);
+}
+
+/* Video Play Button */
+.ibm-video-play-btn {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(22, 22, 22, 0.88);
+    border: none;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.ibm-video-play-btn svg {
+    margin-left: 2px;
+}
+
+.ibm-video-box:hover .ibm-video-play-btn {
+    background: #0F62FE;
+    transform: scale(1.08);
+}
+
+.ibm-video-caption {
+    font-size: 0.82rem;
+    color: #6E6E6E;
+    margin-top: 10px;
+    font-style: italic;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* ── 3. Bottom 4 Service Cards Section ──────────────────────────────── */
+.ibm-hero-cards-section {
+    background: #FFFFFF;
+    padding: 36px 0 68px;
+}
+
+.ibm-hero-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+/* Individual IBM Service Card */
+.ibm-service-card {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    background: #FFFFFF;
+    border: 1px solid #DDE1E6;
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    text-decoration: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+    min-height: 120px;
+}
+
+.ibm-service-card:hover {
+    border-color: #0F62FE;
+    box-shadow: 0 6px 20px rgba(15, 98, 254, 0.12);
+    transform: translateY(-2px);
+}
+
+/* Left Thumbnail Image */
+.ibm-service-card-thumb {
+    width: 105px;
+    min-width: 105px;
+    position: relative;
+    overflow: hidden;
+    background: #E5E7EB;
+}
+
+.ibm-service-card-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.ibm-service-card:hover .ibm-service-card-thumb img {
+    transform: scale(1.06);
+}
+
+/* Right Content */
+.ibm-service-card-content {
+    flex: 1;
+    padding: 14px 28px 16px 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+}
+
+.ibm-service-card-title {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #161616;
+    line-height: 1.35;
+    margin-bottom: 6px;
+    transition: color 0.15s ease;
+}
+
+.ibm-service-card:hover .ibm-service-card-title {
+    color: #0F62FE;
+}
+
+.ibm-service-card-desc {
+    font-size: 0.78rem;
+    color: #525252;
+    line-height: 1.45;
+    margin-bottom: 0;
+}
+
+/* Arrow in bottom-right corner */
+.ibm-service-card-arrow {
+    position: absolute;
+    bottom: 10px;
+    right: 12px;
+    color: #0F62FE;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1;
+    transition: transform 0.2s ease;
+}
+
+.ibm-service-card:hover .ibm-service-card-arrow {
+    transform: translateX(4px);
+}
+
+/* ── Responsive Queries ─────────────────────────────────────────────── */
+@media (max-width: 1200px) {
+    .ibm-hero-title {
+        font-size: 2.8rem;
+    }
+
+    .ibm-hero-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    .ibm-banner-nav-btn {
+        opacity: 0.75;
+    }
+}
+
+@media (max-width: 900px) {
+    .ibm-top-banner {
+        min-height: 480px;
+        background: #080D1A;
+    }
+
+    .ibm-banner-slides {
+        min-height: 480px;
+    }
+
+    .ibm-banner-slide {
+        background-position: center center !important;
+    }
+
+    /* Soft translucent dark gradient overlay for mobile clarity */
+    .ibm-banner-slide::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            180deg,
+            rgba(8, 13, 26, 0.88) 0%,
+            rgba(8, 13, 26, 0.72) 48%,
+            rgba(8, 13, 26, 0.94) 100%
+        );
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    .ibm-banner-container {
+        position: relative;
+        z-index: 2;
+    }
+
+    .ibm-orchestrate-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+
+    .ibm-video-box {
+        height: 250px;
+    }
+}
+
+@media (max-width: 680px) {
+    .ibm-top-banner {
+        min-height: 440px;
+    }
+
+    .ibm-banner-slides {
+        min-height: 440px;
+    }
+
+    .ibm-banner-container {
+        padding: 44px 20px 54px;
+    }
+
+    .ibm-hero-title {
+        font-size: 2.1rem;
+        line-height: 1.22;
+        margin-bottom: 14px;
+    }
+
+    .ibm-hero-sub {
+        font-size: 0.98rem;
+        margin-bottom: 26px;
+    }
+
+    .ibm-cta-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .ibm-btn-primary,
+    .ibm-btn-outline {
+        justify-content: center;
+        width: 100%;
+        padding: 13px 20px;
+    }
+
+    .ibm-banner-nav-btn {
+        width: 38px;
+        height: 38px;
+        opacity: 0.7;
+    }
+
+    .ibm-banner-nav-btn.prev {
+        left: 8px;
+    }
+
+    .ibm-banner-nav-btn.next {
+        right: 8px;
+    }
+
+    .ibm-orchestrate-title {
+        font-size: 1.95rem;
+    }
+
+    .ibm-hero-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .ibm-service-card {
+        min-height: 110px;
+    }
+}
+
+@media (max-width: 440px) {
+    .ibm-hero-title {
+        font-size: 1.85rem;
+    }
+
+    .ibm-service-card-thumb {
+        width: 90px;
+        min-width: 90px;
+    }
+}

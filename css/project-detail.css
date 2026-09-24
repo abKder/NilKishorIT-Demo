@@ -1,0 +1,291 @@
+/*  NilKishorIT - E-Commerce Style Project Details & Case Study Page
+   Features: Thumbnail gallery, spec sheet, challenge-solution story, CTA*/
+
+.project-detail-header {
+    background-color: var(--bg-alt);
+    border-bottom: 1px solid var(--border-light);
+    padding: 40px 0;
+}
+
+.breadcrumb-nav {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+}
+
+.breadcrumb-nav a:hover {
+    color: var(--primary);
+}
+
+.breadcrumb-separator {
+    color: #CBD5E1;
+}
+
+.detail-headline {
+    font-size: 2.5rem;
+    margin-bottom: 12px;
+}
+
+.detail-category-badge {
+    display: inline-block;
+    background-color: var(--primary-light);
+    color: var(--primary);
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 5px 14px;
+    border-radius: var(--radius-full);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Main E-Commerce Product Layout */
+.project-product-layout {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 48px;
+    padding: 60px 0;
+}
+
+/* Left Column: Interactive Image Gallery */
+.gallery-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.main-image-viewport {
+    width: 100%;
+    height: 480px;
+    background-color: #F1F5F9;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    position: relative;
+}
+
+.main-project-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.main-image-viewport:hover .main-project-img {
+    transform: scale(1.02);
+}
+
+.thumbnail-strip {
+    display: flex;
+    gap: 14px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+}
+
+.thumbnail-box {
+    width: 105px;
+    height: 75px;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 2px solid var(--border-light);
+    cursor: pointer;
+    background-color: #F1F5F9;
+    transition: var(--transition);
+    flex-shrink: 0;
+}
+
+.thumbnail-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.thumbnail-box:hover, .thumbnail-box.active {
+    border-color: var(--primary);
+    box-shadow: 0 4px 10px rgba(37, 99, 235, 0.25);
+    transform: translateY(-2px);
+}
+
+/* Right Column: Project Specification & Quick Buy/Hire Box */
+.project-specs-card {
+    background: #FFFFFF;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    padding: 36px;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.specs-title {
+    font-size: 1.4rem;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.meta-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.meta-item-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
+}
+
+.meta-item-value {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-heading);
+}
+
+.specs-summary-text {
+    font-size: 0.98rem;
+    color: var(--text-body);
+    line-height: 1.6;
+}
+
+.tech-chips-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.tech-chips-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tech-chip {
+    background: var(--bg-alt);
+    border: 1px solid var(--border-light);
+    padding: 6px 14px;
+    border-radius: var(--radius-sm);
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text-heading);
+}
+
+.specs-action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.live-preview-btn {
+    width: 100%;
+    justify-content: center;
+}
+
+.order-similar-btn {
+    width: 100%;
+    justify-content: center;
+}
+
+/* Bottom Tabbed Story / Case Study Details */
+.case-study-details-section {
+    padding: 40px 0 80px;
+    border-top: 1px solid var(--border-light);
+}
+
+.story-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+    margin-bottom: 50px;
+}
+
+.story-card {
+    background: #FFFFFF;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    box-shadow: var(--shadow-sm);
+}
+
+.story-card-title {
+    font-size: 1.25rem;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.story-card p {
+    font-size: 0.96rem;
+    color: var(--text-body);
+    line-height: 1.65;
+}
+
+.features-checklist-card {
+    background: var(--bg-alt);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    padding: 36px;
+    margin-bottom: 50px;
+}
+
+.checklist-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-heading);
+}
+
+.check-icon {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: var(--emerald);
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+/* Client Feedback Card on Detail Page */
+.project-review-card {
+    background: linear-gradient(135deg, #EFF6FF, #EEF2FF);
+    border: 1px solid var(--border-accent);
+    border-radius: var(--radius-lg);
+    padding: 36px;
+    text-align: center;
+}
+
+.review-stars {
+    color: #F59E0B;
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+}
+
+.review-quote {
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--text-heading);
+    margin-bottom: 14px;
+    font-style: italic;
+}
