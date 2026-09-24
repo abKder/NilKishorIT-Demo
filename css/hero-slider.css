@@ -1,13 +1,11 @@
-/* ===================================================================
-   NilKishorIT — IBM Consulting Hero Section Stylesheet
+/* NilKishorIT — IBM Consulting Hero Section Stylesheet
    Features:
    - Dynamic auto-transitioning slides & background image cross-fade
    - Ken Burns subtle smooth zoom effect
    - Floating navigation arrows (hover reveal & mobile ready)
    - Progress bar pagination indicators
    - Middle "Orchestrate AI at scale" section with video preview
-   - Bottom 4 Service cards with authentic photography thumbnails
-   =================================================================== */
+   - Bottom 4 Service cards with authentic photography thumbnails */
 
 /* ── 1. Hero Top Banner with Dynamic Carousel ────────────────────── */
 .hero-section {

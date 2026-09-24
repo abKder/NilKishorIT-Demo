@@ -301,7 +301,7 @@ const DEFAULT_TEAM = [
         id: "team-1",
         name: "Abdul Kader Imran",
         role: "Founder & Lead Architect",
-        image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
+        image: "https://liv-doc.vercel.app/assets/images/patient1.jpeg",
         bio: "Specializing in high-concurrency systems, distributed cloud architecture, and modern product engineering.",
         skills: ["System Design", "Cloud Architecture", "Full-Stack"],
         social: {
@@ -314,7 +314,7 @@ const DEFAULT_TEAM = [
         id: "team-2",
         name: "Tanvir Ahmed",
         role: "Head of Engineering",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
+        image: "https://liv-doc.vercel.app/assets/images/patient1.jpeg",
         bio: "10+ years engineering enterprise platforms, API gateways, and ultra-secure database systems.",
         skills: ["Node.js", "Python", "Database Scaling"],
         social: {
@@ -327,7 +327,7 @@ const DEFAULT_TEAM = [
         id: "team-3",
         name: "Nusrat Jahan",
         role: "Lead UI/UX Designer",
-        image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80",
+        image: "https://liv-doc.vercel.app/assets/images/patient1.jpeg",
         bio: "Creating user-first design systems and micro-interactions that boost customer conversion.",
         skills: ["Figma", "Design Systems", "User Research"],
         social: {
@@ -340,7 +340,7 @@ const DEFAULT_TEAM = [
         id: "team-4",
         name: "Firos Munna",
         role: "Senior Mobile Engineer",
-        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80",
+        image: "https://liv-doc.vercel.app/assets/images/patient1.jpeg",
         bio: "Passionate about building buttery-smooth Android and iOS consumer applications.",
         skills: ["Flutter", "React Native", "Native APIs"],
         social: {
