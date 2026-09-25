@@ -1,10 +1,21 @@
-/*  NilKishorIT - E-Commerce Style Project Details & Case Study Page
-   Features: Thumbnail gallery, spec sheet, challenge-solution story, CTA*/
+/* ===================================================================
+   NilKishorIT - E-Commerce Style Project Details & Case Study Page
+   Features:
+   - Interactive Thumbnail gallery & main viewport
+   - Specifications sheet, tech chips, quick action buttons
+   - Challenge & Solution engineering story cards
+   - Key architectural features checklist
+   - Client testimonial card
+   - Micro-interactions, hover animations & full responsive overhaul
+   =================================================================== */
 
+/* Page Header & Breadcrumb */
 .project-detail-header {
     background-color: var(--bg-alt);
     border-bottom: 1px solid var(--border-light);
-    padding: 40px 0;
+    padding: 42px 0 36px;
+    position: relative;
+    overflow: hidden;
 }
 
 .breadcrumb-nav {
@@ -17,16 +28,26 @@
     margin-bottom: 16px;
 }
 
+.breadcrumb-nav a {
+    color: var(--text-muted);
+    transition: color 0.2s ease;
+}
+
 .breadcrumb-nav a:hover {
     color: var(--primary);
 }
 
 .breadcrumb-separator {
     color: #CBD5E1;
+    user-select: none;
 }
 
 .detail-headline {
     font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    color: var(--text-heading);
     margin-bottom: 12px;
 }
 
@@ -39,7 +60,17 @@
     padding: 5px 14px;
     border-radius: var(--radius-full);
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.06em;
+    margin-bottom: 12px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(37, 99, 235, 0.15);
+}
+
+.detail-category-badge:hover {
+    background-color: var(--primary);
+    color: #FFFFFF;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
 }
 
 /* Main E-Commerce Product Layout */
@@ -47,7 +78,7 @@
     display: grid;
     grid-template-columns: 1.15fr 0.85fr;
     gap: 48px;
-    padding: 60px 0;
+    padding: 50px 0 60px;
 }
 
 /* Left Column: Interactive Image Gallery */
@@ -60,30 +91,48 @@
 .main-image-viewport {
     width: 100%;
     height: 480px;
-    background-color: #F1F5F9;
+    background-color: #F8FAFC;
     border: 1px solid var(--border-light);
     border-radius: var(--radius-lg);
     overflow: hidden;
     box-shadow: var(--shadow-md);
     position: relative;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.main-image-viewport:hover {
+    box-shadow: 0 16px 36px rgba(15, 23, 42, 0.09);
+    border-color: rgba(37, 99, 235, 0.25);
 }
 
 .main-project-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.4s ease;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
 }
 
 .main-image-viewport:hover .main-project-img {
-    transform: scale(1.02);
+    transform: scale(1.03);
 }
 
 .thumbnail-strip {
     display: flex;
     gap: 14px;
     overflow-x: auto;
-    padding-bottom: 8px;
+    padding: 4px 2px 10px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: #CBD5E1 transparent;
+}
+
+.thumbnail-strip::-webkit-scrollbar {
+    height: 6px;
+}
+
+.thumbnail-strip::-webkit-scrollbar-thumb {
+    background-color: #CBD5E1;
+    border-radius: 4px;
 }
 
 .thumbnail-box {
@@ -94,23 +143,33 @@
     border: 2px solid var(--border-light);
     cursor: pointer;
     background-color: #F1F5F9;
-    transition: var(--transition);
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
     flex-shrink: 0;
+    position: relative;
 }
 
 .thumbnail-box img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
+    transition: opacity 0.2s ease;
 }
 
-.thumbnail-box:hover, .thumbnail-box.active {
+.thumbnail-box:hover {
     border-color: var(--primary);
-    box-shadow: 0 4px 10px rgba(37, 99, 235, 0.25);
-    transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.25);
+    transform: translateY(-3px);
 }
 
-/* Right Column: Project Specification & Quick Buy/Hire Box */
+.thumbnail-box.active {
+    border-color: var(--primary);
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+    outline: 2px solid rgba(37, 99, 235, 0.4);
+    outline-offset: 1px;
+}
+
+/* Right Column: Project Specification & Order Card */
 .project-specs-card {
     background: #FFFFFF;
     border: 1px solid var(--border-light);
@@ -120,12 +179,23 @@
     display: flex;
     flex-direction: column;
     gap: 24px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.project-specs-card:hover {
+    box-shadow: 0 14px 34px rgba(15, 23, 42, 0.08);
+    border-color: rgba(37, 99, 235, 0.22);
 }
 
 .specs-title {
     font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-heading);
     padding-bottom: 14px;
     border-bottom: 1px solid var(--border-light);
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .meta-grid {
@@ -139,8 +209,8 @@
     font-weight: 700;
     text-transform: uppercase;
     color: var(--text-muted);
-    letter-spacing: 0.05em;
-    margin-bottom: 4px;
+    letter-spacing: 0.06em;
+    margin-bottom: 5px;
 }
 
 .meta-item-value {
@@ -152,7 +222,7 @@
 .specs-summary-text {
     font-size: 0.98rem;
     color: var(--text-body);
-    line-height: 1.6;
+    line-height: 1.65;
 }
 
 .tech-chips-group {
@@ -175,8 +245,19 @@
     font-size: 0.82rem;
     font-weight: 600;
     color: var(--text-heading);
+    transition: all 0.25s ease;
+    cursor: default;
 }
 
+.tech-chip:hover {
+    background-color: var(--primary-light);
+    color: var(--primary);
+    border-color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(37, 99, 235, 0.15);
+}
+
+/* Specs Action Buttons */
 .specs-action-buttons {
     display: flex;
     flex-direction: column;
@@ -187,14 +268,36 @@
 .live-preview-btn {
     width: 100%;
     justify-content: center;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.live-preview-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(37, 99, 235, 0.35);
+}
+
+.live-preview-btn svg {
+    transition: transform 0.25s ease;
+}
+
+.live-preview-btn:hover svg {
+    transform: translate(3px, -3px);
 }
 
 .order-similar-btn {
     width: 100%;
     justify-content: center;
+    transition: all 0.3s ease;
 }
 
-/* Bottom Tabbed Story / Case Study Details */
+.order-similar-btn:hover {
+    background: var(--bg-alt);
+    border-color: var(--primary);
+    color: var(--primary);
+    transform: translateY(-2px);
+}
+
+/* Bottom Story & Case Study Breakdown */
 .case-study-details-section {
     padding: 40px 0 80px;
     border-top: 1px solid var(--border-light);
@@ -213,28 +316,44 @@
     border-radius: var(--radius-lg);
     padding: 32px;
     box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.story-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px rgba(15, 23, 42, 0.08);
+    border-color: rgba(37, 99, 235, 0.25);
 }
 
 .story-card-title {
     font-size: 1.25rem;
+    font-weight: 700;
     margin-bottom: 14px;
     display: flex;
     align-items: center;
     gap: 10px;
+    color: var(--text-heading);
 }
 
 .story-card p {
     font-size: 0.96rem;
     color: var(--text-body);
-    line-height: 1.65;
+    line-height: 1.7;
 }
 
+/* Features Checklist */
 .features-checklist-card {
     background: var(--bg-alt);
     border: 1px solid var(--border-light);
     border-radius: var(--radius-lg);
     padding: 36px;
     margin-bottom: 50px;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.features-checklist-card:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    border-color: rgba(37, 99, 235, 0.2);
 }
 
 .checklist-grid {
@@ -251,6 +370,14 @@
     font-size: 0.95rem;
     font-weight: 500;
     color: var(--text-heading);
+    padding: 6px 8px;
+    border-radius: 6px;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.check-item:hover {
+    transform: translateX(4px);
+    background: rgba(37, 99, 235, 0.04);
 }
 
 .check-icon {
@@ -263,22 +390,30 @@
     align-items: center;
     justify-content: center;
     font-size: 0.75rem;
+    font-weight: 700;
     flex-shrink: 0;
     margin-top: 2px;
 }
 
-/* Client Feedback Card on Detail Page */
+/* Client Feedback Card */
 .project-review-card {
-    background: linear-gradient(135deg, #EFF6FF, #EEF2FF);
+    background: linear-gradient(135deg, #EFF6FF 0%, #EEF2FF 100%);
     border: 1px solid var(--border-accent);
     border-radius: var(--radius-lg);
     padding: 36px;
     text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-review-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 32px rgba(37, 99, 235, 0.12);
 }
 
 .review-stars {
     color: #F59E0B;
-    font-size: 1.2rem;
+    font-size: 1.25rem;
+    letter-spacing: 2px;
     margin-bottom: 12px;
 }
 
@@ -288,4 +423,181 @@
     color: var(--text-heading);
     margin-bottom: 14px;
     font-style: italic;
+    line-height: 1.6;
+}
+
+/* ===================================================================
+   RESPONSIVE DESIGN BREAKPOINTS FOR PROJECT DETAIL
+   =================================================================== */
+
+/* ── 1. Tablets & Small Laptops (max-width: 1050px) ───────────────── */
+@media (max-width: 1050px) {
+    .project-product-layout {
+        grid-template-columns: 1fr;
+        gap: 36px;
+        padding: 40px 0;
+    }
+
+    .main-image-viewport {
+        height: 420px;
+    }
+
+    .story-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        margin-bottom: 36px;
+    }
+
+    .checklist-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+    }
+}
+
+/* ── 2. Small Tablets & Landscape Mobile (max-width: 768px) ───────── */
+@media (max-width: 768px) {
+    .project-detail-header {
+        padding: 32px 0 26px;
+    }
+
+    .detail-headline {
+        font-size: 2rem;
+        line-height: 1.28;
+    }
+
+    .main-image-viewport {
+        height: 320px;
+    }
+
+    .thumbnail-box {
+        width: 88px;
+        height: 64px;
+    }
+
+    .project-specs-card {
+        padding: 26px 20px;
+        gap: 20px;
+    }
+
+    .checklist-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .features-checklist-card {
+        padding: 26px 20px;
+        margin-bottom: 36px;
+    }
+
+    .story-card {
+        padding: 26px 20px;
+    }
+
+    .project-review-card {
+        padding: 28px 20px;
+    }
+
+    .review-quote {
+        font-size: 1.05rem;
+    }
+}
+
+/* ── 3. Mobile Devices (max-width: 480px) ─────────────────────────── */
+@media (max-width: 480px) {
+    .project-detail-header {
+        padding: 26px 0 20px;
+    }
+
+    .breadcrumb-nav {
+        font-size: 0.78rem;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-bottom: 12px;
+    }
+
+    .detail-headline {
+        font-size: 1.65rem;
+        line-height: 1.25;
+    }
+
+    .main-image-viewport {
+        height: 230px;
+        border-radius: var(--radius-md);
+    }
+
+    .thumbnail-box {
+        width: 74px;
+        height: 52px;
+    }
+
+    .meta-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .project-specs-card {
+        padding: 20px 16px;
+        gap: 18px;
+    }
+
+    .specs-title {
+        font-size: 1.25rem;
+        padding-bottom: 10px;
+    }
+
+    .specs-summary-text {
+        font-size: 0.92rem;
+    }
+
+    .story-card {
+        padding: 20px 16px;
+    }
+
+    .story-card-title {
+        font-size: 1.15rem;
+    }
+
+    .story-card p {
+        font-size: 0.92rem;
+    }
+
+    .features-checklist-card {
+        padding: 20px 16px;
+        margin-bottom: 30px;
+    }
+
+    .check-item {
+        font-size: 0.88rem;
+        padding: 4px 6px;
+    }
+
+    .project-review-card {
+        padding: 22px 14px;
+    }
+
+    .review-quote {
+        font-size: 0.95rem;
+    }
+
+    .live-preview-btn,
+    .order-similar-btn {
+        padding: 12px 16px;
+        font-size: 0.88rem;
+    }
+}
+
+/* ── 4. Small Mobile Devices (max-width: 360px) ───────────────────── */
+@media (max-width: 360px) {
+    .detail-headline {
+        font-size: 1.4rem;
+    }
+
+    .main-image-viewport {
+        height: 195px;
+    }
+
+    .thumbnail-box {
+        width: 62px;
+        height: 46px;
+    }
 }

@@ -7,8 +7,85 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+    syncSiteInfo();
     loadProjectDetails();
+    setupMobileNav();
+    setupStickyNav();
 });
+
+function syncSiteInfo() {
+    if (typeof NilKishorData === 'undefined') return;
+    const info = NilKishorData.getSiteInfo();
+    
+    // Contact in top bar
+    const phoneEl = document.getElementById('topBarPhone');
+    if (phoneEl && info.contactPhone) phoneEl.textContent = info.contactPhone;
+
+    const emailEl = document.getElementById('topBarEmail');
+    if (emailEl && info.contactEmail) emailEl.textContent = info.contactEmail;
+
+    // Brand name text
+    document.querySelectorAll('.brand-name-text').forEach(el => {
+        el.textContent = info.brandName || "NilKishorIT";
+    });
+}
+
+function setupMobileNav() {
+    const hamburger = document.getElementById('hamburgerBtn');
+    const navMenu = document.getElementById('navMenu');
+    const backdrop = document.getElementById('mobileNavBackdrop');
+    const closeBtn = document.getElementById('mobileDrawerClose');
+
+    if (!hamburger || !navMenu) return;
+
+    function openMenu() {
+        navMenu.classList.add('open');
+        hamburger.classList.add('active');
+        if (backdrop) backdrop.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeMenu() {
+        navMenu.classList.remove('open');
+        hamburger.classList.remove('active');
+        if (backdrop) backdrop.classList.remove('open');
+        document.body.style.overflow = '';
+    }
+
+    hamburger.addEventListener('click', () => {
+        if (navMenu.classList.contains('open')) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
+    });
+
+    if (backdrop) backdrop.addEventListener('click', closeMenu);
+    if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+
+    // Close mobile menu when a direct link is clicked
+    const links = document.querySelectorAll('.nav-menu a');
+    links.forEach(link => {
+        link.addEventListener('click', () => {
+            if (window.innerWidth <= 1050) {
+                closeMenu();
+            }
+        });
+    });
+}
+
+function setupStickyNav() {
+    const navbar = document.getElementById('mainNavbar');
+    if (!navbar) return;
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 40) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+}
 
 function loadProjectDetails() {
     const params = new URLSearchParams(window.location.search);
